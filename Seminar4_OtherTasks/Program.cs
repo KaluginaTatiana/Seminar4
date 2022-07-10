@@ -43,7 +43,7 @@ void Task30_1()  // Программа, которая выводит масси
     int[] array1 = new int[size];
     void PrintArrayRandom(int[] array)
     {
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < array1.Length; i++)
         {
             array[i] = new Random().Next(0, 2);
             Console.Write($"{array[i]} ");
@@ -52,6 +52,32 @@ void Task30_1()  // Программа, которая выводит масси
     }
     PrintArrayRandom(array1);
 }
+//Task30_1();
 
-Task30_1();
+void Task30_2()  // Программа, которая выводит массив из 8 элементов, заполненный 0 и 1 в случайном порядке (вариант с двумя методами)
+{
+    int size = 8;
+    int[] array1 = new int [size];
+    
+    FillArrayRandom(array1);
+    PrintArray(array1);
 
+    void FillArrayRandom(int[] FillArray)
+    {
+        Random random = new Random();
+        for (int i = 0; i < FillArray.Length; i++)
+        {
+            FillArray[i] = random.Next(0, 2);
+        }
+    }
+
+    void PrintArray(int[] array)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.Write($"{array[i]} "); 
+        }
+        Console.WriteLine();
+    }
+}
+Task30_2();
